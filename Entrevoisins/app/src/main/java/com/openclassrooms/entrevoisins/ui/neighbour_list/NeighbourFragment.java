@@ -1,6 +1,7 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
@@ -11,10 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.Utils.ItemClickSupport;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
+import com.openclassrooms.entrevoisins.ui.neighbour_details.NeighbourDetailsActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -27,6 +30,8 @@ public class NeighbourFragment extends Fragment {
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
     private RecyclerView mRecyclerView;
+
+    private MyNeighbourRecyclerViewAdapter adapter;
 
 
     /**
@@ -53,7 +58,24 @@ public class NeighbourFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         initList();
+        this.configueOnClickRecyclerView();
         return view;
+    }
+
+    private void configueOnClickRecyclerView(){
+        ItemClickSupport.addTo(mRecyclerView, R.layout.fragment_neighbour)
+                .setOnItemClickListener((recyclerView, position, v) -> {
+
+                    Neighbour currentNeighbour = adapter.getNeighbour(position);
+
+                    Intent intent = new Intent(getActivity(), NeighbourDetailsActivity.class);
+                    intent.putExtra("current_id", currentNeighbour.getId());
+                    intent.putExtra("current_name", currentNeighbour.getName());
+                    intent.putExtra("current_avatar", currentNeighbour.getAvatarUrl());
+
+                    startActivity(intent);
+
+                });
     }
 
     /**
@@ -61,7 +83,8 @@ public class NeighbourFragment extends Fragment {
      */
     private void initList() {
         mNeighbours = mApiService.getNeighbours();
-        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+        adapter = new MyNeighbourRecyclerViewAdapter(mNeighbours);
+        mRecyclerView.setAdapter(adapter);
     }
 
     @Override

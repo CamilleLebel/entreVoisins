@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.openclassrooms.entrevoisins.ui.neighbour_details.NeighbourDetailsActivity">
+
+    <item android:id="@+id/action_one"
+        android:title="action 1"
+        android:orderInCategory="1"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_two"
+        android:title="action 2"
+        android:orderInCategory="2"
+        app:showAsAction="never"/>
+</menu>
