@@ -1,27 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/background_dark"
-    android:backgroundTint="@android:color/darker_gray"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.neighbour_details.NeighbourDetailsActivity"
-    tools:showIn="@layout/activity_neighbour_details">
 
-    <TextView
-        android:id="@+id/description_text"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/text_margin"
-        android:background="@drawable/border"
-        android:backgroundTint="@android:color/background_light"
-        android:padding="@dimen/activity_vertical_margin"
-        android:shadowColor="@color/text_shadow"
-        android:shadowDx="-2"
-        android:shadowDy="-2"
-        android:shadowRadius="1"
-        tools:text="@string/large_text" />
+        android:background="@android:color/background_dark"
+        android:backgroundTint="#D3D3D3"
+        android:paddingBottom="150dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".ui.neighbour_details.NeighbourDetailsActivity"
+        tools:showIn="@layout/activity_neighbour_details">
 
-</android.support.v4.widget.NestedScrollView>
+        <android.support.design.card.MaterialCardView
+            android:id="@+id/card_view_1"
+            style="@style/Widget.MaterialComponents.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:minHeight="200dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toStartOf="@id/card_view_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:text="@string/title_activity_neighbour_details"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_place_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/neighbour_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_margin"
+                        android:text="@string/neighbour_living_place" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_phone_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/neighbour_phone_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/text_margin"
+                        android:text="@string/neighbour_phone_number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_website_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/neighbour_url_website"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/text_margin"
+                        android:text="@string/neighbour_url_website" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.design.card.MaterialCardView>
+
+        <android.support.design.card.MaterialCardView
+            android:id="@+id/card_view_2"
+            style="@style/Widget.MaterialComponents.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:minHeight="100dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/card_view_1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title_second_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:text="@string/neighbour_desc_title"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/neigbour_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/neighbour_description" />
+
+
+            </LinearLayout>
+        </android.support.design.card.MaterialCardView>
+
+
+</android.support.constraint.ConstraintLayout>
+

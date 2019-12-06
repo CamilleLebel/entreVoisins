@@ -58,11 +58,11 @@ public class NeighbourFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         initList();
-        this.configueOnClickRecyclerView();
+        this.configureOnClickRecyclerView();
         return view;
     }
 
-    private void configueOnClickRecyclerView(){
+    private void configureOnClickRecyclerView(){
         ItemClickSupport.addTo(mRecyclerView, R.layout.fragment_neighbour)
                 .setOnItemClickListener((recyclerView, position, v) -> {
 

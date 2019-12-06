@@ -1,14 +1,14 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,29 +16,39 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.Utils.SharedPreference;
+import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
-import com.openclassrooms.entrevoisins.ui.neighbour_details.NeighbourDetailsActivity;
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeighbourRecyclerViewAdapter.ViewHolder> {
+public class MyFavoriteNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyFavoriteNeighbourRecyclerViewAdapter.ViewHolder>{
 
-    private final List<Neighbour> mNeighbours;
+    private List<Neighbour> mNeighbours;
+    private SharedPreference sharedPreference;
+    private NeighbourApiService apiService;
 
-    public MyNeighbourRecyclerViewAdapter(List<Neighbour> items) {
-        mNeighbours = items;
+
+    public MyFavoriteNeighbourRecyclerViewAdapter(List<Neighbour> items) {
+        this.mNeighbours = items;
+        sharedPreference = new SharedPreference();
+
+
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_neighbour, parent, false);
+        mNeighbours = sharedPreference.getFavorites(parent.getContext());
         return new ViewHolder(view);
     }
 
@@ -65,6 +75,8 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                         dialogInterface.dismiss();
 
                         EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
+                        mNeighbours.remove(position);
+
 
                         Log.i("DEBUG", "neighbour deleted");
                     }
@@ -76,7 +88,6 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                     }
                 });
                 alertDialog.show();
-
             }
         });
     }

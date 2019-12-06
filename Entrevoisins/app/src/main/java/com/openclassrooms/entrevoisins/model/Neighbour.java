@@ -28,6 +28,10 @@ public class Neighbour {
         this.avatarUrl = avatarUrl;
     }
 
+    public Neighbour(){
+        super();
+    }
+
     public Integer getId() {
         return id;
     }

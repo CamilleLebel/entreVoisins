@@ -3,6 +3,8 @@
     <string name="tab_neighbour_title">My neighbours</string>
     <string name="tab_favorites_title">Favorites</string>
     <string name="title_activity_neighbour_details">activity_neighbour_details</string>
+    <string name="no_favorites_items">error no fav items</string>
+    <string name="no_favorites_msg">There is no favorite</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -93,4 +95,9 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="neighbour_living_place">the place where the neighbour is living</string>
+    <string name="neighbour_phone_number">neigbour\'s phone number</string>
+    <string name="neighbour_url_website">neighbour\'s url website</string>
+    <string name="neighbour_desc_title">A propos de moi</string>
+    <string name="neighbour_description">Neighbour\'s description</string>
 </resources>
