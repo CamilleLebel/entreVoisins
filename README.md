@@ -16,6 +16,19 @@ Add more general information about project. What the purpose of the project is? 
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
+<img src=".img/screenshot_app_1.PNG"
+     alt="Home Screen"
+     style="float: left; margin-right: 10px;"
+     width="200"/> <img src=".img/screenshot_app_2.PNG"
+     alt="Home Screen"
+     style="float: left; margin-right: 10px;"
+     width="200"/> <img src=".img/screenshot_app_3.PNG"
+     alt="Home Screen"
+     style="float: left; margin-right: 10px;"
+     width="200"/> <img src=".img/screenshot_app_4.PNG"
+     alt="Home Screen"
+     style="float: left; margin-right: 10px;"
+     width="200"/> 	
 
 ## Technologies
 * Tech 1 - version 1.0
