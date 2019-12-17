@@ -1,5 +1,5 @@
-# Project Name
-> Here goes your awesome project description!
+# EntreVoisins
+> This is an Android app that allows neihgbours to provide themselves with small service like animals care, private lessons, small DIY, many options are available to users !
 
 ## Table of contents
 * [General info](#general-info)
@@ -12,23 +12,18 @@
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+This project is led by the company Entrevoisins
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<img src=".img/screenshot_app_1.PNG"
-     alt="Home Screen"
+<img src="/img/screenshot_app_1.png"
      style="float: left; margin-right: 10px;"
-     width="200"/> <img src=".img/screenshot_app_2.PNG"
-     alt="Home Screen"
+     width="200"/> <img src="/img/screenshot_app_2.png"
      style="float: left; margin-right: 10px;"
-     width="200"/> <img src=".img/screenshot_app_3.PNG"
-     alt="Home Screen"
+     width="200"/> <img src="/img/screenshot_app_3.png"
      style="float: left; margin-right: 10px;"
-     width="200"/> <img src=".img/screenshot_app_4.PNG"
-     alt="Home Screen"
+     width="200"/> <img src="/img/screenshot_app_4.png"
      style="float: left; margin-right: 10px;"
-     width="200"/> 	
+     width="186"/> 	
 
 ## Technologies
 * Tech 1 - version 1.0
