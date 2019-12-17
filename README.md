@@ -20,13 +20,14 @@ This project is led by the company Entrevoisins
      style="float: left; margin-right: 10px;"
      width="200"/> <img src="/img/screenshot_app_4.png"
      style="float: left; margin-right: 10px;"
-     width="186"/> 	
+     width="200"/> 	
 
 ## Setup
 - You have to use Android Studio, download it and intall it if you don't have it yet.
 - Download the Project.zip and extract zip
 - Open Android Studio then open Entrevoisins project
 - To compile the entire project, click the "Build project" button
+![build screen](/img/screenshot_ide_1_LI.jpg "build screenshot")
 - To execute the project on a device just plug in your phone and click the "Run app" button
   (same thing for emulator but you have to download and install one first)
 - To execute Tests, make sure you have a plugged device for instrumented tests, then right-click on the "app" floder then "Run all Tests"
