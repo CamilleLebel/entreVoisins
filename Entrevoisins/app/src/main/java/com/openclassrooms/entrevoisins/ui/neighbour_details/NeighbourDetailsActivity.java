@@ -13,6 +13,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -73,6 +74,8 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 onBackPressed();
+
+                Log.i("DEBUG", "backPressed");
             }
         });
 
@@ -95,16 +98,16 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
         titleCardview1.setText(currentNeighbour.getName());
 
         neighbourPlace = (TextView) findViewById(R.id.neighbour_place) ;
-        neighbourPlace.setText(currentNeighbour.getName() + "'s home");
+        neighbourPlace.setText(nameData + "'s home");
 
         neighbourPhoneNumber = (TextView) findViewById(R.id.neighbour_phone_number) ;
-        neighbourPhoneNumber.setText(currentNeighbour.getName() + "'s phone number");
+        neighbourPhoneNumber.setText(nameData + "'s phone number");
 
         neighbourUrlWebiste = (TextView) findViewById(R.id.neighbour_url_website) ;
-        neighbourUrlWebiste.setText(currentNeighbour.getName() + "'s url website");
+        neighbourUrlWebiste.setText(nameData + "'s url website");
 
         neighbourDesc = (TextView) findViewById(R.id.neigbour_description);
-        neighbourDesc.setText(currentNeighbour.getName() + "'s description");
+        neighbourDesc.setText(nameData + "'s description");
 
 
         FloatingActionButton fabfav = (FloatingActionButton) findViewById(R.id.fabfav);

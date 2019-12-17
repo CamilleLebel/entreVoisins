@@ -33,14 +33,13 @@ import java.util.List;
 
 public class FavoriteNeighbourFragment extends Fragment {
 
-    Activity mActivity;
     private NeighbourApiService mApiService;
     private List<Neighbour> favorites;
     private RecyclerView favoriteList;
 
     private MyFavoriteNeighbourRecyclerViewAdapter adapter;
 
-    SharedPreference sharedPreference;
+    private SharedPreference sharedPreference;
 
 
     /**

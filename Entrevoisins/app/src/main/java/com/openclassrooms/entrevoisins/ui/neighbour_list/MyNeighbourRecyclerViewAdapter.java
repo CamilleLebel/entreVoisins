@@ -55,27 +55,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             @Override
             public void onClick(View v) {
 
-                AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).create();
-                alertDialog.setTitle("Warning !");
-                alertDialog.setMessage("Do you want to delete the neighbour ?");
-                alertDialog.setCancelable(true);
-                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "YES", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-
-                        EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
-
-                        Log.i("DEBUG", "neighbour deleted");
-                    }
-                });
-                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "NO", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-                alertDialog.show();
+                EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
 
             }
         });

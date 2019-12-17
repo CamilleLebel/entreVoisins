@@ -89,7 +89,8 @@ public class MyFavoriteNeighbourRecyclerViewAdapter extends RecyclerView.Adapter
                 });
                 alertDialog.show();
             }
-        });
+        }
+        );
     }
 
     @Override

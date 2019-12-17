@@ -8,6 +8,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.openclassrooms.entrevoisins.R;
@@ -18,8 +19,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ListNeighbourActivity extends AppCompatActivity {
-
-//    public static final int PICK_CONTACT_REQUEST = 1;
 
     // UI Components
     @BindView(R.id.tabs)
@@ -37,10 +36,29 @@ public class ListNeighbourActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_neighbour);
         ButterKnife.bind(this);
 
+        initView();
+
+        Log.i("DEBUG", "ListActivity onCreate()");
+    }
+
+    private void initView(){
         setSupportActionBar(mToolbar);
         mPagerAdapter = new ListNeighbourPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
         mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        initView();
+        Log.i("DEBUG", "ListActivity onStart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("DEBUG", "ListActivity onStop");
     }
 }
