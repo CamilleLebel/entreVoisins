@@ -1,62 +1,49 @@
-# Project Name
-> Here goes your awesome project description!
+# EntreVoisins
+> This is an Android app that allows neihgbours to provide themselves with small service like animals care, private lessons, small DIY, many options are available to users !
 
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
-* [Technologies](#technologies)
 * [Setup](#setup)
-* [Features](#features)
+* [Tests](#tests)
 * [Status](#status)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+This project is led by the company Entrevoisins
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<img src=".img/screenshot_app_1.PNG"
-     alt="Home Screen"
+<img src="/img/screenshot_app_1.png"
      style="float: left; margin-right: 10px;"
-     width="200"/> <img src=".img/screenshot_app_2.PNG"
-     alt="Home Screen"
+     width="200"/> <img src="/img/screenshot_app_2.png"
      style="float: left; margin-right: 10px;"
-     width="200"/> <img src=".img/screenshot_app_3.PNG"
-     alt="Home Screen"
+     width="200"/> <img src="/img/screenshot_app_3.png"
      style="float: left; margin-right: 10px;"
-     width="200"/> <img src=".img/screenshot_app_4.PNG"
-     alt="Home Screen"
+     width="200"/> <img src="/img/screenshot_app_4.png"
      style="float: left; margin-right: 10px;"
-     width="200"/> 	
-
-## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+     width="186"/> 	
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+- You have to use Android Studio, download it and intall it if you don't have it yet.
+- Download the Project.zip and extract zip
+- Open Android Studio then open Entrevoisins project
+- To compile the entire project, click the "Build project" button
+- To execute the project on a device just plug in your phone and click the "Run app" button
+  (same thing for emulator but you have to download and install one first)
+- To execute Tests, make sure you have a plugged device for instrumented tests, then right-click on the "app" floder then "Run all Tests"
+  
 
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
+## Tests
+4 Unit tests :
+- get the list of niehgbours with success
+- delete neighbour with success
+- add neighbour to favorite with success
+- get favorites into favorite list of neighbours with success
 
-## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
-
-To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+4 Instrumented tests :
+- recycler view not empty
+- delete a niehgbour delete his item aswell
+- clicking on an item should display his details
+- when you add a neighbour to favorite, it should be diplayed in the favorites fragment
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
-
-## Inspiration
-Add here credits. Project inspired by..., based on...
-
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Project is:  _finished_
