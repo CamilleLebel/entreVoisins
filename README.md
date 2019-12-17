@@ -7,8 +7,6 @@
 * [Setup](#setup)
 * [Tests](#tests)
 * [Status](#status)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
 
 ## General info
 This project is led by the company Entrevoisins
@@ -40,6 +38,7 @@ This project is led by the company Entrevoisins
 - delete neighbour with success
 - add neighbour to favorite with success
 - get favorites into favorite list of neighbours with success
+
 4 Instrumented tests :
 - recycler view not empty
 - delete a niehgbour delete his item aswell
