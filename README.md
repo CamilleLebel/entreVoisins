@@ -30,7 +30,9 @@ This project is led by the company Entrevoisins
 ![build screen](/img/screenshot_ide_1_LI.jpg "build screenshot")
 - To execute the project on a device just plug in your phone and click the "Run app" button
   (same thing for emulator but you have to download and install one first)
+![build screen](/img/screenshot_ide_2_LI.jpg "run screenshot")
 - To execute Tests, make sure you have a plugged device for instrumented tests, then right-click on the "app" floder then "Run all Tests"
+![build screen](/img/screenshot_ide_3_LI.jpg "run tests screenshot")
   
 
 ## Tests
