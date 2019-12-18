@@ -75,7 +75,11 @@ public class NeighboursListTest {
 
         favorites = sharedPreference.getFavorites(targetContext);
         if(favorites.size() > 0){
-            sharedPreference.removeFavorite(targetContext, favorites.get(0));
+
+            for(int i=0; i < favorites.size(); i++){
+                sharedPreference.removeFavorite(targetContext, favorites.get(i));
+            }
+
         }
 
         mActivity = mActivityRule.getActivity();
